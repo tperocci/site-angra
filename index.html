@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap" rel="stylesheet">
+<title>Angra Ferreira N. Perocci Ramos · Psicóloga | Terapia online</title>
+</head>
+<body>
+
+<style>
+  :root{
+    --ink:#173139;--ink-soft:#3c4c50;--cream:#f5f1e8;--cream-2:#efe8da;--paper:#fbf8f2;
+    --terra:#c06a49;--terra-deep:#a4543a;--taupe:#c9b7a2;--taupe-soft:#e0d4c3;--line:#e2d8c6;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --maxw:1120px;
+    --photo:url(/angra.jpg);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{max-width:100%;overflow-x:hidden}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+  section{padding:clamp(56px,9vw,104px) 0}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--terra-deep)}
+  h2{font-family:var(--serif);font-weight:360;font-size:clamp(28px,4.6vw,44px);line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
+  h3{font-family:var(--serif);font-weight:420;font-size:20px;line-height:1.2}
+  .lead{font-size:clamp(16px,2vw,18px);color:var(--ink-soft);max-width:60ch}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.01em;padding:15px 26px;border-radius:100px;transition:transform .15s ease,background .2s ease}
+  .btn-primary{background:var(--terra);color:#fff}
+  .btn-primary:hover{background:var(--terra-deep);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--cream)}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(251,248,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:8px 24px;max-width:var(--maxw);margin:0 auto}
+  .logoimg{height:68px;width:auto;display:block}
+  .nav .btn{padding:11px 20px;font-size:14px}
+
+  .hero{background:linear-gradient(180deg,var(--cream) 0%,var(--paper) 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+  .hero-grid>*,.approach .grid>*,.about .grid>*{min-width:0}
+  .hero .eyebrow{margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-weight:350;font-size:clamp(36px,6.2vw,62px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--terra-deep)}
+  .hero p.sub{margin-top:22px;font-size:clamp(16px,2.1vw,19px);color:var(--ink-soft);max-width:46ch}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+  .hero .tags{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:13.5px;color:var(--ink-soft)}
+  .hero .tags span{display:flex;align-items:center;gap:8px}
+  .hero .tags span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--terra)}
+
+  .hero-visual{position:relative}
+  .hero-visual .frame{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;
+    background-image:var(--photo);background-size:cover;background-position:center 15%;
+    box-shadow:0 30px 60px -30px rgba(23,49,57,.42)}
+  .hero-visual .badge{position:absolute;left:-14px;bottom:26px;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:14px 20px;border-radius:14px;box-shadow:0 16px 30px -14px rgba(23,49,57,.35)}
+  .hero-visual .badge b{font-family:var(--serif);font-weight:500;font-size:18px;display:block}
+  .hero-visual .badge span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-deep)}
+
+  .pain{background:var(--ink);color:var(--cream)}
+  .pain .eyebrow{color:var(--terra)}
+  .pain h2{color:var(--cream);margin-top:14px;max-width:20ch}
+  .pain .grid{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .pain .item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:24px}
+  .pain .item p{color:#dbe2e1;font-size:15.5px}
+  .pain .item .q{font-family:var(--serif);font-style:italic;color:var(--taupe);font-size:15px;margin-bottom:6px}
+  .pain .close{margin-top:36px;font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.6vw,24px);color:#f0dccf;max-width:40ch}
+
+  .approach .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+  .approach .points{display:flex;flex-direction:column;gap:26px;margin-top:12px}
+  .approach .pt{display:flex;gap:16px}
+  .approach .pt .n{font-family:var(--serif);font-style:italic;color:var(--terra);font-size:26px;line-height:1;min-width:34px}
+  .approach .pt h3{margin-bottom:4px}
+  .approach .pt p{color:var(--ink-soft);font-size:15.5px}
+
+  .areas{background:var(--cream)}
+  .areas .head{max-width:56ch}
+  .areas .cards{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;transition:transform .18s ease,box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 24px 40px -28px rgba(23,49,57,.4)}
+  .card .ic{width:46px;height:46px;border-radius:12px;background:var(--taupe-soft);display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--terra-deep);font-size:20px}
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--ink-soft);font-size:15px}
+
+  .about .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,60px);align-items:center}
+  .about-photo{aspect-ratio:4/5;border-radius:22px;overflow:hidden;
+    background-image:var(--photo);background-size:cover;background-position:center 12%;
+    box-shadow:0 26px 50px -34px rgba(23,49,57,.38)}
+  .about p{color:var(--ink-soft);margin-top:18px;font-size:16px;max-width:52ch}
+  .about .chips{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{font-size:13px;font-weight:600;color:var(--ink);background:var(--cream-2);border:1px solid var(--line);padding:9px 16px;border-radius:100px}
+  .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--terra-deep);margin-top:24px}
+
+  .steps{background:var(--ink);color:var(--cream)}
+  .steps .eyebrow{color:var(--terra)}
+  .steps h2{color:var(--cream);margin-top:14px}
+  .steps .row{margin-top:46px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step .n{font-family:var(--serif);font-size:44px;color:var(--terra);line-height:1}
+  .step h3{color:var(--cream);margin:14px 0 8px}
+  .step p{color:#cfd8d7;font-size:15px}
+
+  .proof .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:48px}
+  .proof .b{border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;background:var(--paper)}
+  .proof .b b{font-family:var(--serif);font-size:30px;color:var(--terra-deep);display:block}
+  .proof .b span{font-size:13.5px;color:var(--ink-soft)}
+  .proof .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .quote{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .quote .mark{font-family:var(--serif);font-size:40px;color:var(--taupe);line-height:.6}
+  .quote p{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);margin:12px 0 18px}
+  .quote .who{font-size:13px;color:var(--ink-soft)}
+  .placeholder-note{margin-top:18px;font-size:13px;color:var(--ink-soft);font-style:italic}
+  .vcard{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:28px}
+  .vcard .vt{font-family:var(--serif);font-weight:440;font-size:20px;color:var(--ink);line-height:1.2;margin-bottom:10px;display:flex;align-items:flex-start;gap:11px}
+  .vcard .vt::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--terra);flex:none;margin-top:7px}
+  .vcard p{color:var(--ink-soft);font-size:15.5px}
+
+  .faq{background:var(--cream)}
+  .faq .list{margin-top:36px;max-width:760px}
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:var(--serif);font-size:19px;color:var(--ink)}
+  summary::-webkit-details-marker{display:none}
+  summary .plus{color:var(--terra);font-size:24px;transition:transform .2s ease}
+  details[open] summary .plus{transform:rotate(45deg)}
+  details p{color:var(--ink-soft);margin-top:12px;font-size:15.5px;max-width:64ch}
+
+  .final{background:radial-gradient(120% 120% at 50% 0%,#d47c5a 0%,var(--terra) 50%,var(--terra-deep) 100%);color:#fff;text-align:center}
+  .final h2{color:#fff;max-width:20ch;margin:0 auto}
+  .final p{color:#ffe9df;margin:18px auto 32px;max-width:44ch;font-size:17px}
+  .final .btn-primary{background:#fff;color:var(--terra-deep)}
+  .final .btn-primary:hover{background:var(--cream)}
+
+  footer{background:var(--ink);color:#89999a;padding:56px 0 40px}
+  footer .cols{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+  footer .links{display:flex;gap:24px;font-size:14px}
+  footer a:hover{color:var(--cream)}
+  footer .fine{margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#89999a;line-height:1.6}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:100;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 26px -8px rgba(11,94,60,.6);transition:transform .16s ease}
+  .wa-float:hover{transform:translateY(-3px) scale(1.04)}
+  .wa-float svg{width:33px;height:33px}
+
+  @media(max-width:880px){
+    .hero-grid,.approach .grid,.about .grid{grid-template-columns:1fr}
+    .hero-visual{order:-1;max-width:420px}
+    .pain .grid,.areas .cards,.steps .row,.proof .strip,.proof .quotes{grid-template-columns:1fr}
+    .about-photo{max-width:380px}
+  }
+  @media(max-width:560px){ .nav .btn{display:none} .logoimg{height:56px} }
+</style>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#topo"><img src="/logo.png" alt="Angra Ferreira N. Perocci Ramos, Psicóloga" class="logoimg"></a>
+    <a class="btn btn-primary" href="#contato">Agendar conversa</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Psicóloga · Atendimento online</div>
+        <h1>Você não precisa dar conta de <em>tudo</em> sozinha.</h1>
+        <p class="sub">Terapia para quem carrega muito e ainda se cobra. Um espaço seguro pra você desacelerar, se entender e voltar a caber na própria vida.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contato">Agendar uma conversa</a>
+          <a class="btn btn-ghost" href="#sobre">Conhecer meu trabalho</a>
+        </div>
+        <div class="tags"><span>Relações familiares</span><span>Ansiedade</span><span>Autoestima</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame"></div>
+        <div class="badge"><b>Atendimento online</b><span>Do seu espaço, com sigilo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pain">
+    <div class="wrap">
+      <div class="eyebrow">Talvez você se reconheça</div>
+      <h2>Por fora, tudo sob controle. Por dentro, o cansaço de segurar tudo.</h2>
+      <div class="grid">
+        <div class="item"><div class="q">"Preciso dar conta."</div><p>Você vive no automático e sente que nada que faz é suficiente.</p></div>
+        <div class="item"><div class="q">"E se der errado?"</div><p>A ansiedade chega antes do problema, e não desliga.</p></div>
+        <div class="item"><div class="q">"Depois eu cuido de mim."</div><p>Você se cobra por tudo, mas quase nunca é prioridade na própria lista.</p></div>
+        <div class="item"><div class="q">"É meu papel resolver."</div><p>Carrega o peso das relações da família como se fosse só seu.</p></div>
+        <div class="item"><div class="q">"Durmo, mas não descanso."</div><p>Acorda cansada, com a sensação de que nunca para de verdade.</p></div>
+        <div class="item"><div class="q">"Preciso estar bem pros outros."</div><p>Cuida de todo mundo e esquece de perguntar como você está.</p></div>
+      </div>
+      <p class="close">Se você se reconheceu em alguma dessas, saiba de uma coisa: dá pra viver diferente. E você não precisa fazer isso sozinha.</p>
+    </div>
+  </section>
+
+  <section class="approach">
+    <div class="wrap grid">
+      <div>
+        <div class="eyebrow">Como é a terapia comigo</div>
+        <h2 style="margin-top:14px">Um espaço só seu, sem pressa e sem julgamento.</h2>
+        <p class="lead" style="margin-top:18px">A terapia não é sobre dar conta de mais uma coisa. É sobre ter um lugar onde você pode, enfim, tirar o peso das costas e se olhar com mais gentileza.</p>
+      </div>
+      <div class="points">
+        <div class="pt"><div class="n">01</div><div><h3>Acolhimento de verdade</h3><p>Você fala, eu escuto sem te julgar. Aqui não existe jeito certo de sentir.</p></div></div>
+        <div class="pt"><div class="n">02</div><div><h3>No seu tempo</h3><p>Cada processo é único. A gente caminha no seu ritmo, respeitando o que você consegue nesse momento.</p></div></div>
+        <div class="pt"><div class="n">03</div><div><h3>Para levar pra vida</h3><p>Além da conversa, você sai com clareza e recursos pra lidar com o dia a dia.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="areas" id="areas">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">No que eu posso te ajudar</div>
+        <h2 style="margin-top:14px">Temas que costumam trazer você até aqui.</h2>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="ic">&#9825;</div><h3>Relações familiares</h3><p>Entender padrões que se repetem, colocar limites e se relacionar sem se anular no processo.</p></div>
+        <div class="card"><div class="ic">&#9788;</div><h3>Ansiedade</h3><p>Aprender a lidar com a mente acelerada, diminuir a autocobrança e voltar pro presente.</p></div>
+        <div class="card"><div class="ic">&#10022;</div><h3>Autoestima</h3><p>Reconstruir a relação com você mesma, com mais gentileza e menos cobrança.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="wrap grid">
+      <div class="about-photo"></div>
+      <div>
+        <div class="eyebrow">Prazer, sou a Angra</div>
+        <h2 style="margin-top:14px">Psicologia com escuta, cuidado e um olhar humano.</h2>
+        <p>Sou psicóloga (CRP 06/170588) e atendo online pessoas que vivem se cobrando e carregando mais do que conseguem sustentar. Acredito que a terapia é um espaço de reencontro com você mesma, no seu tempo e sem julgamento.</p>
+        <p>Meu trabalho é te ajudar a entender o que te trouxe até aqui, aliviar esse peso e construir uma relação mais leve com a sua história, suas emoções e as pessoas ao seu redor.</p>
+        <div class="chips">
+          <span class="chip">CRP 06/170588</span>
+          <span class="chip">Atendimento 100% online</span>
+          <span class="chip">Sigilo garantido</span>
+          <span class="chip">Relações · Ansiedade · Autoestima</span>
+        </div>
+        <div class="sig">Angra Ferreira N. Perocci Ramos</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <div class="eyebrow">Simples de começar</div>
+      <h2>Como funciona, do primeiro contato ao acompanhamento.</h2>
+      <div class="row">
+        <div class="step"><div class="n">1</div><h3>Você me chama</h3><p>Manda uma mensagem e a gente combina o melhor horário pra sua primeira conversa.</p></div>
+        <div class="step"><div class="n">2</div><h3>Primeira sessão</h3><p>Um encontro pra gente se conhecer. Você não precisa chegar com tudo resolvido, só com vontade de começar.</p></div>
+        <div class="step"><div class="n">3</div><h3>Acompanhamento</h3><p>Encontros no seu ritmo, num espaço seguro e só seu, pra caminhar com mais clareza.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="wrap">
+      <div class="eyebrow">Confiança e segurança</div>
+      <h2 style="margin-top:14px;margin-bottom:40px">Um cuidado sério, do início ao fim.</h2>
+      <div class="strip">
+        <div class="b"><b>CRP 06/170588</b><span>Registro profissional ativo no Conselho de Psicologia</span></div>
+        <div class="b"><b>100% online</b><span>Atenda de onde estiver, com privacidade e conforto</span></div>
+        <div class="b"><b>Sigilo total</b><span>Tudo o que você compartilha fica protegido pelo sigilo</span></div>
+      </div>
+      <div class="quotes">
+        <div class="vcard"><div class="vt">Ser ouvida de verdade</div><p>Um espaço pra você falar sem medo de julgamento, no seu tempo.</p></div>
+        <div class="vcard"><div class="vt">Entender o que te trouxe até aqui</div><p>A gente olha junto pros padrões que se repetem, com acolhimento e clareza.</p></div>
+        <div class="vcard"><div class="vt">Voltar a se priorizar</div><p>Passo a passo pra você deixar de ficar por último na própria vida.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="eyebrow">Ainda com dúvidas?</div>
+      <h2 style="margin-top:14px">Perguntas frequentes</h2>
+      <div class="list">
+        <details open><summary>A terapia online funciona mesmo? <span class="plus">+</span></summary><p>Sim. O atendimento online tem a mesma qualidade do presencial, com a vantagem de você fazer de um lugar em que se sinta à vontade. Tudo o que você precisa é de um espaço reservado e uma conexão de internet.</p></details>
+        <details><summary>Quanto tempo dura o processo? <span class="plus">+</span></summary><p>Cada pessoa é única, então não existe um prazo fixo. A terapia respeita o seu tempo, e a gente conversa sobre o caminho ao longo do processo.</p></details>
+        <details><summary>Como funcionam horários e valores? <span class="plus">+</span></summary><p>Os horários são combinados de acordo com a sua disponibilidade. Sobre valores e frequência, me chame que eu te explico tudo com calma.</p></details>
+        <details><summary>É sigiloso? <span class="plus">+</span></summary><p>Totalmente. O sigilo é um princípio ético da psicologia. Tudo o que você trouxer para a sessão fica protegido.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contato">
+    <div class="wrap">
+      <h2>O primeiro passo costuma ser o mais difícil.</h2>
+      <p>Se você chegou até aqui, talvez seja o momento de se colocar em primeiro lugar. Vamos conversar?</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="https://wa.me/5511943759532" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn btn-ghost" style="border-color:#fff;color:#fff" href="https://instagram.com/angra.psi" target="_blank" rel="noopener">Chamar no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div class="brand" style="display:flex;flex-direction:column;gap:4px">
+        <b style="font-family:var(--serif);font-size:22px;color:var(--cream)">Angra Ferreira N. Perocci Ramos</b>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)">Psicóloga · CRP 06/170588</span>
+        <span style="margin-top:8px;font-size:14px">Atendimento psicológico online</span>
+        <a href="https://instagram.com/angra.psi" target="_blank" rel="noopener" style="margin-top:14px;display:inline-flex;align-items:center;gap:9px;color:var(--cream);font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.2);padding:9px 16px;border-radius:100px;width:max-content;transition:background .2s ease" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='transparent'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>@angra.psi</a>
+      </div>
+      <div class="links">
+        <a href="#areas">Áreas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://instagram.com/angra.psi" target="_blank" rel="noopener">@angra.psi</a>
+      </div>
+    </div>
+    <div class="fine">
+      Este site tem caráter informativo e não substitui uma avaliação psicológica individual. Atendimento realizado de acordo com o Código de Ética Profissional do Psicólogo (CFP).<br>
+      © Angra Ferreira N. Perocci Ramos · Psicóloga · CRP 06/170588. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5511943759532" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M16.03 4c-6.63 0-12 5.37-12 12 0 2.11.55 4.09 1.51 5.81L4 28l6.36-1.5A11.9 11.9 0 0 0 16.03 28c6.63 0 12-5.37 12-12s-5.37-12-12-12Zm0 21.9c-1.86 0-3.6-.5-5.1-1.38l-.37-.22-3.78.89.9-3.68-.24-.38A9.85 9.85 0 0 1 6.13 16c0-5.46 4.44-9.9 9.9-9.9s9.9 4.44 9.9 9.9-4.44 9.9-9.9 9.9Zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+</a>
+
+</body>
+</html>
